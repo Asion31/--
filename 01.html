@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shape Hover</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      background-color: #1a1a1f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .stage {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 52px;
+    }
+
+    .shape {
+      width: 160px;
+      height: 160px;
+      position: relative;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    /* hover 文字 */
+    .shape::after {
+      content: "hover";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      color: #ffffff;
+      font-size: 22px;
+      font-weight: 500;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    /* 鼠标悬浮：上移10px，阴影偏移0 */
+    .shape:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .shape:hover::after {
+      opacity: 1;
+    }
+
+    /* 1 橙色正方形 */
+    .s1 {
+      border-radius: 0;
+      background: linear-gradient(135deg, #ffbc52, #ff5f5f);
+      box-shadow: 0 12px 30px rgba(255, 95, 95, 0.25);
+    }
+
+    /* 2 绿色圆角方形 */
+    .s2 {
+      border-radius: 15px;
+      background: linear-gradient(135deg, #36d98a, #22c48b);
+      box-shadow: 0 12px 30px rgba(34, 196, 139, 0.25);
+    }
+
+    /* 3 紫色圆角方形 */
+    .s3 {
+      border-radius: 36px;
+      background: linear-gradient(135deg, #b8a2c8, #7a6b9a);
+      box-shadow: 0 12px 30px rgba(122, 107, 154, 0.25);
+    }
+
+    /* 4 黄橙圆形 */
+    .s4 {
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ffe27a, #ffb26b);
+      box-shadow: 0 12px 30px rgba(255, 178, 107, 0.25);
+    }
+
+    /* 5 灰绿色圆角方形 */
+    .s5 {
+      border-radius: 18px;
+      background: linear-gradient(135deg, #638f82, #455f5f);
+      box-shadow: 0 12px 30px rgba(69, 95, 95, 0.25);
+    }
+
+    /* 6 紫色圆形 */
+    .s6 {
+      border-radius: 50%;
+      background: linear-gradient(135deg, #d8c5e4, #a084b8);
+      box-shadow: 0 12px 30px rgba(160, 132, 184, 0.25);
+    }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <div class="shape s1"></div>
+    <div class="shape s2"></div>
+    <div class="shape s3"></div>
+    <div class="shape s4"></div>
+    <div class="shape s5"></div>
+    <div class="shape s6"></div>
+  </div>
+</body>
+</html>
